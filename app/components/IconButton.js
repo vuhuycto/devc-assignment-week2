@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import colors from '../config/colors';
+import PropTypes from 'prop-types';
 
 function IconButton({
 	name,
@@ -27,6 +28,27 @@ function IconButton({
 		</TouchableOpacity>
 	);
 }
+
+IconButton.propTypes = {
+	backgroundColor: PropTypes.oneOf([
+		'primary',
+		'secondary',
+		'tertiary',
+		'grey',
+		'white',
+		'black',
+	]),
+	color: PropTypes.oneOf([
+		'primary',
+		'secondary',
+		'tertiary',
+		'grey',
+		'white',
+		'black',
+	]),
+	externalStyle: PropTypes.object,
+	size: PropTypes.number,
+};
 
 const styles = StyleSheet.create({
 	button: {

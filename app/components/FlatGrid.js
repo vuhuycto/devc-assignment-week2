@@ -1,7 +1,10 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 function FlatGrid({ data, numColumns, style, renderComponent }) {
+	if (!data) return null;
+
 	let id = 0;
 
 	const grid = [];
@@ -26,6 +29,13 @@ function FlatGrid({ data, numColumns, style, renderComponent }) {
 		</View>
 	);
 }
+
+FlatGrid.propTypes = {
+	data: PropTypes.array,
+	numColumns: PropTypes.number,
+	style: PropTypes.object,
+	renderComponent: PropTypes.func,
+};
 
 const styles = StyleSheet.create({
 	row: {

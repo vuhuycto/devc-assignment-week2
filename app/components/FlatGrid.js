@@ -5,14 +5,14 @@ function FlatGrid({ data, numColumns, style, renderComponent }) {
 	let id = 0;
 
 	const grid = [];
-	let itemsInGrid = [];
+	let rowData = [];
 
 	data.forEach((value, index) => {
-		itemsInGrid.push(value);
+		rowData.push(value);
 
 		if ((index + 1) % numColumns === 0) {
-			grid.push(itemsInGrid);
-			itemsInGrid = [];
+			grid.push(rowData);
+			rowData = [];
 		}
 	});
 

@@ -12,6 +12,22 @@ import profile from './../config/fakeData';
 function ProfileScreen() {
 	return (
 		<Screen>
+			<View style={styles.navigation}>
+				<IconButton
+					name='chevron-left'
+					size={25}
+					backgroundColor='white'
+					color='black'
+					externalStyle={styles.navigationBtn}
+				/>
+				<IconButton
+					name='grid'
+					size={25}
+					backgroundColor='white'
+					color='black'
+					externalStyle={styles.navigationBtn}
+				/>
+			</View>
 			<ScrollView>
 				<View style={styles.header}>
 					<Image
@@ -26,7 +42,7 @@ function ProfileScreen() {
 						</View>
 						<View style={styles.cta}>
 							<TextButton title='Follow' />
-							<IconButton name='send' color='tertiary' />
+							<IconButton name='send' backgroundColor='tertiary' />
 						</View>
 					</View>
 				</View>
@@ -59,7 +75,17 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-evenly',
 		alignItems: 'center',
-		paddingTop: 70,
+		paddingTop: 20,
+	},
+	navigation: {
+		width: '100%',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+	},
+	navigationBtn: {
+		paddingVertical: 15,
+		paddingHorizontal: 15,
 	},
 	avatar: {
 		width: 100,
